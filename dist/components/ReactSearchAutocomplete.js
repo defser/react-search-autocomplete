@@ -116,11 +116,15 @@ function ReactSearchAutocomplete(_a) {
         ? (0, utils_1.debounce)(function (keyword) { return callOnSearch(keyword); }, inputDebounce)
         : function (keyword) { return callOnSearch(keyword); }, [items]);
     var handleOnClick = function (result) {
+        var _a, _b, _c, _d;
         eraseResults();
         onSelect(result);
         setSearchString(result[resultStringKeyName]);
         setHighlightedItem(0);
-        setHasFocus(false);
+        (_a = document.getElementById('topnav')) === null || _a === void 0 ? void 0 : _a.click();
+        (_b = document.getElementById('topnav')) === null || _b === void 0 ? void 0 : _b.click();
+        (_c = document.getElementById('topnav')) === null || _c === void 0 ? void 0 : _c.click();
+        (_d = document.getElementById('topnav')) === null || _d === void 0 ? void 0 : _d.click();
         console.log('clicked');
     };
     var fuseResults = function (keyword) {
