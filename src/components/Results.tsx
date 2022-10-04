@@ -96,7 +96,7 @@ const ResultsWrapper = ({ children }: { children: ReactNode }) => {
     <StyledResults>
       <div className="line" />
       <ul>{children}</ul>
-      <div className="d-flex justify-content-center">
+      <div className="idk-device d-flex justify-content-center">
         <a href="/reparatie/merk">
           Ik weet niet welk toestel ik heb
         </a>
@@ -134,6 +134,10 @@ const StyledResults = styled.div`
         margin-left: 13px;
       }
     }
+  }
+  
+  .idk-device {
+    padding-bottom: 16px;
   }
 
   .ellipsis {
