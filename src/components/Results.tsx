@@ -77,7 +77,7 @@ export default function Results<T>({
           className={highlightedItem === index ? 'selected' : ''}
           onMouseEnter={() => setHighlightedItem({ index })}
           data-test="result"
-          key={`rsa-result-${result.id}`}
+          key={`rsa-result-${index}`}
           onMouseDown={(event) => handleMouseDown({ event, result })}
           onClick={() => handleClick(result)}
         >
