@@ -147,10 +147,7 @@ export default function ReactSearchAutocomplete<T>({
     onSelect(result)
     setSearchString(result[resultStringKeyName])
     setHighlightedItem(0)
-    document.getElementById('topnav')?.click();
-    document.getElementById('topnav')?.click();
-    document.getElementById('topnav')?.click();
-    document.getElementById('topnav')?.click();
+    setHasFocus(false)
     console.log('clicked')
   }
 
