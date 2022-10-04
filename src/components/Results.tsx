@@ -79,7 +79,11 @@ export default function Results<T>({
           data-test="result"
           key={`rsa-result-${result.id}`}
           onMouseDown={(event) => handleMouseDown({ event, result })}
-          onClick={() => handleClick(result)}
+          onClick={(event) => {
+            // @ts-ignore
+            event.target.blur();
+            handleClick(result)
+          }}
         >
           <SearchIcon showIcon={showIcon} />
           <div className="ellipsis" title={result[resultStringKeyName] as string}>
