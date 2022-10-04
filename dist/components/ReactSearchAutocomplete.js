@@ -120,8 +120,6 @@ function ReactSearchAutocomplete(_a) {
         onSelect(result);
         setSearchString(result[resultStringKeyName]);
         setHighlightedItem(0);
-        setHasFocus(false);
-        console.log('clicked');
     };
     var fuseResults = function (keyword) {
         return fuse

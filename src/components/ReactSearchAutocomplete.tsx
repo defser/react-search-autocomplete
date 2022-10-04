@@ -147,8 +147,6 @@ export default function ReactSearchAutocomplete<T>({
     onSelect(result)
     setSearchString(result[resultStringKeyName])
     setHighlightedItem(0)
-    setHasFocus(false)
-    console.log('clicked')
   }
 
   const fuseResults = (keyword: string) =>

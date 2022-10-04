@@ -77,9 +77,13 @@ export default function Results<T>({
           className={highlightedItem === index ? 'selected' : ''}
           onMouseEnter={() => setHighlightedItem({ index })}
           data-test="result"
-          key={`rsa-result-${index}`}
+          key={`rsa-result-${result.id}`}
           onMouseDown={(event) => handleMouseDown({ event, result })}
-          onClick={() => handleClick(result)}
+          onClick={(event) => {
+            // @ts-ignore
+            event.target.blur();
+            handleClick(result)
+          }}
         >
           <SearchIcon showIcon={showIcon} />
           <div className="ellipsis" title={result[resultStringKeyName] as string}>
