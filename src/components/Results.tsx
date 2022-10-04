@@ -96,6 +96,11 @@ const ResultsWrapper = ({ children }: { children: ReactNode }) => {
     <StyledResults>
       <div className="line" />
       <ul>{children}</ul>
+      <div className="d-flex justify-content-center">
+        <a href="/reparatie/merk">
+          Ik weet niet welk toestel ik heb
+        </a>
+      </div>
     </StyledResults>
   )
 }
