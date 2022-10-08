@@ -25,7 +25,7 @@ export const ClearIcon = ({
     return null
   }
 
-  if (!hasFocus && !searchString || searchString?.length <= 0) {
+  if (!hasFocus && (!searchString || searchString?.length <= 0)) {
     return null
   }
 
