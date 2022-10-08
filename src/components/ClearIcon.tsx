@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
 export const ClearIcon = ({
+  hasFocus,
   showClear,
   setSearchString,
   searchString,
   setFocus,
   onClear
 }: {
+  hasFocus: boolean
   showClear: boolean
   setSearchString: Function
   searchString: string
@@ -23,7 +25,7 @@ export const ClearIcon = ({
     return null
   }
 
-  if (!searchString || searchString?.length <= 0) {
+  if (!hasFocus && !searchString || searchString?.length <= 0) {
     return null
   }
 

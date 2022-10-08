@@ -13,6 +13,7 @@ interface SearchInputProps {
   placeholder: string
   showIcon: boolean
   showClear: boolean
+  hasFocus: boolean
 }
 
 export default function SearchInput({
@@ -23,6 +24,7 @@ export default function SearchInput({
   onFocus,
   onClear,
   placeholder,
+  hasFocus,
   showIcon = true,
   showClear = true
 }: SearchInputProps) {
@@ -55,6 +57,7 @@ export default function SearchInput({
         data-test="search-input"
       />
       <ClearIcon
+        hasFocus={hasFocus}
         showClear={showClear}
         setSearchString={setSearchString}
         searchString={searchString}

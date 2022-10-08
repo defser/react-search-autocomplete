@@ -229,6 +229,7 @@ export default function ReactSearchAutocomplete<T>({
             placeholder={placeholder}
             showIcon={showIcon}
             showClear={showClear}
+            hasFocus={hasFocus}
             setHighlightedItem={handleSetHighlightedItem}
           />
           <Results
