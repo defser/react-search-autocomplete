@@ -111,7 +111,6 @@ export default function ReactSearchAutocomplete<T>({
 
   useEffect(() => {
     const handleDocumentClick = () => {
-      eraseResults()
       setHasFocus(false)
     }
 
@@ -122,8 +121,8 @@ export default function ReactSearchAutocomplete<T>({
 
   const handleOnFocus = (event: FocusEvent<HTMLInputElement>) => {
     onFocus(event)
-    searchString?.length > 0 && (setResults(fuseResults(searchString)))
     setHasFocus(true)
+    searchString?.length > 0 && (setResults(fuseResults(searchString)))
   }
 
   const callOnSearch = (keyword: string) => {

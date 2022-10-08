@@ -95,7 +95,6 @@ function ReactSearchAutocomplete(_a) {
     }, [showItemsOnFocus, results, searchString, hasFocus]);
     (0, react_1.useEffect)(function () {
         var handleDocumentClick = function () {
-            eraseResults();
             setHasFocus(false);
         };
         document.addEventListener('click', handleDocumentClick);
@@ -103,8 +102,8 @@ function ReactSearchAutocomplete(_a) {
     }, []);
     var handleOnFocus = function (event) {
         onFocus(event);
-        (searchString === null || searchString === void 0 ? void 0 : searchString.length) > 0 && (setResults(fuseResults(searchString)));
         setHasFocus(true);
+        (searchString === null || searchString === void 0 ? void 0 : searchString.length) > 0 && (setResults(fuseResults(searchString)));
     };
     var callOnSearch = function (keyword) {
         var newResults = [];
