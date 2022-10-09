@@ -141,6 +141,7 @@ function ReactSearchAutocomplete(_a) {
     };
     var handleResetSearchString = function () {
         setSearchString('');
+        setHasFocus(false);
         setIsTyping(false);
         eraseResults();
     };

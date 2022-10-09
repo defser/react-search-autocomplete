@@ -169,6 +169,7 @@ export default function ReactSearchAutocomplete<T>({
 
   const handleResetSearchString = () => {
     setSearchString('')
+    setHasFocus(false)
     setIsTyping(false)
     eraseResults()
   }
