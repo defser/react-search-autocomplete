@@ -112,14 +112,10 @@ export default function ReactSearchAutocomplete<T>({
         let timestampA = new Date(a.released).getTime()
         // @ts-ignore
         let timestampB = new Date(b.released).getTime()
-        let scoreA = 0
-        let scoreB = 0
-        if (timestampA && timestampB) {
-          scoreA = (timestampA / 1000000000)
-          scoreB = (timestampB / 1000000000)
-        }
+        let scoreA = (timestampA / 1000000000)
+        let scoreB = (timestampB / 1000000000)
         // @ts-ignore
-        return scoreA > scoreB ? -1 : 1
+        return scoreA < scoreB ? -1 : 1
       })
       setResults(array.slice(0, maxResults))
     }
