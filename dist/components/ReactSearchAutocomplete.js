@@ -114,7 +114,7 @@ function ReactSearchAutocomplete(_a) {
                     scoreB = (timestampB / 1000000000);
                 }
                 // @ts-ignore
-                return scoreA < scoreB ? -1 : 1;
+                return scoreA > scoreB ? -1 : 1;
             });
             setResults(array.slice(0, maxResults));
         }
