@@ -107,11 +107,16 @@ function ReactSearchAutocomplete(_a) {
                 var timestampA = new Date(a.released).getTime();
                 // @ts-ignore
                 var timestampB = new Date(b.released).getTime();
-                var scoreA = (timestampA / 1000000000);
-                var scoreB = (timestampB / 1000000000);
+                var scoreA = 0;
+                var scoreB = 0;
+                if (timestampA && timestampB) {
+                    scoreA = (timestampA / 1000000000);
+                    scoreB = (timestampB / 1000000000);
+                }
                 // @ts-ignore
-                return scoreA < scoreB ? -1 : 1;
+                return scoreA === scoreB ? (a.order < b.order ? -1 : 1) : scoreA < scoreB ? -1 : 1;
             });
+            array.reverse();
             setResults(array.slice(0, maxResults));
         }
     }, [showItemsOnFocus, results, searchString, hasFocus]);
