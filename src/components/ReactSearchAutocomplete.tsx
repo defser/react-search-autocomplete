@@ -106,9 +106,22 @@ export default function ReactSearchAutocomplete<T>({
 
   useEffect(() => {
     if (showItemsOnFocus && results.length === 0 && searchString.length === 0 && hasFocus) {
-      let shuffled = [...items]
-      shuffled = shuffled.sort(function(){return .5 - Math.random()})
-      setResults(shuffled.slice(0, maxResults))
+      let array = [...items]
+      array = array.sort((a,b) => {
+        // @ts-ignore
+        let timestampA = new Date(a.released).getTime()
+        // @ts-ignore
+        let timestampB = new Date(b.released).getTime()
+        let scoreA = 0
+        let scoreB = 0
+        if (timestampA && timestampB) {
+          scoreA = (timestampA / 1000000000)
+          scoreB = (timestampB / 1000000000)
+        }
+        // @ts-ignore
+        return scoreA === scoreB ? (a.order < b.order ? -1 : 1) : scoreA < scoreB ? -1 : 1
+      })
+      setResults(array.slice(0, maxResults))
     }
   }, [showItemsOnFocus, results, searchString, hasFocus])
 
