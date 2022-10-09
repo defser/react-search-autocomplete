@@ -22,9 +22,9 @@ exports.ClearIcon = void 0;
 var jsx_runtime_1 = require("react/jsx-runtime");
 var styled_components_1 = __importDefault(require("styled-components"));
 var ClearIcon = function (_a) {
-    var hasFocus = _a.hasFocus, showClear = _a.showClear, setSearchString = _a.setSearchString, searchString = _a.searchString, setFocus = _a.setFocus, onClear = _a.onClear;
+    var hasFocus = _a.hasFocus, showClear = _a.showClear, resetSearchString = _a.resetSearchString, searchString = _a.searchString, setFocus = _a.setFocus, onClear = _a.onClear;
     var handleClearSearchString = function () {
-        setSearchString({ target: { value: '' } });
+        resetSearchString();
         setFocus(false);
         onClear();
     };

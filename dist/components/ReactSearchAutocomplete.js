@@ -139,6 +139,15 @@ function ReactSearchAutocomplete(_a) {
             setIsSearchComplete(false);
         }
     };
+    var handleResetSearchString = function () {
+        var keyword = '';
+        setSearchString(keyword);
+        handleOnSearch(keyword);
+        setIsTyping(false);
+        if (isSearchComplete) {
+            setIsSearchComplete(false);
+        }
+    };
     var eraseResults = function () {
         setResults([]);
         setIsSearchComplete(true);
@@ -180,7 +189,7 @@ function ReactSearchAutocomplete(_a) {
             }
         }
     };
-    return ((0, jsx_runtime_1.jsx)(styled_components_1.ThemeProvider, __assign({ theme: theme }, { children: (0, jsx_runtime_1.jsx)(StyledReactSearchAutocomplete, { children: (0, jsx_runtime_1.jsxs)("div", __assign({ className: "wrapper" }, { children: [(0, jsx_runtime_1.jsx)(SearchInput_1.default, { searchString: searchString, setSearchString: handleSetSearchString, autoFocus: autoFocus, onFocus: handleOnFocus, onClear: onClear, placeholder: placeholder, showIcon: showIcon, showClear: showClear, hasFocus: hasFocus, setHighlightedItem: handleSetHighlightedItem }), (0, jsx_runtime_1.jsx)(Results_1.default, { results: results, onClick: handleOnClick, setSearchString: setSearchString, showIcon: showIcon, maxResults: maxResults, resultStringKeyName: resultStringKeyName, formatResult: formatResult, highlightedItem: highlightedItem, setHighlightedItem: handleSetHighlightedItem, showNoResultsFlag: showNoResultsFlag, showNoResultsText: showNoResultsText })] })) }) })));
+    return ((0, jsx_runtime_1.jsx)(styled_components_1.ThemeProvider, __assign({ theme: theme }, { children: (0, jsx_runtime_1.jsx)(StyledReactSearchAutocomplete, { children: (0, jsx_runtime_1.jsxs)("div", __assign({ className: "wrapper" }, { children: [(0, jsx_runtime_1.jsx)(SearchInput_1.default, { searchString: searchString, setSearchString: handleSetSearchString, resetSearchString: handleResetSearchString, autoFocus: autoFocus, onFocus: handleOnFocus, onClear: onClear, placeholder: placeholder, showIcon: showIcon, showClear: showClear, hasFocus: hasFocus, setHighlightedItem: handleSetHighlightedItem }), (0, jsx_runtime_1.jsx)(Results_1.default, { results: results, onClick: handleOnClick, setSearchString: setSearchString, showIcon: showIcon, maxResults: maxResults, resultStringKeyName: resultStringKeyName, formatResult: formatResult, highlightedItem: highlightedItem, setHighlightedItem: handleSetHighlightedItem, showNoResultsFlag: showNoResultsFlag, showNoResultsText: showNoResultsText })] })) }) })));
 }
 exports.default = ReactSearchAutocomplete;
 var StyledReactSearchAutocomplete = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  position: relative;\n\n  height: ", ";\n\n  > .wrapper {\n    position: absolute;\n    display: flex;\n    flex-direction: column;\n    width: 100%;\n\n    border: ", ";\n    border-radius: ", ";\n\n    background-color: ", ";\n    color: ", ";\n\n    font-size: ", ";\n    font-family: ", ";\n\n    z-index: ", ";\n\n    &:hover {\n      box-shadow: ", ";\n    }\n    &:active {\n      box-shadow: ", ";\n    }\n    &:focus-within {\n      box-shadow: ", ";\n    }\n  }\n"], ["\n  position: relative;\n\n  height: ", ";\n\n  > .wrapper {\n    position: absolute;\n    display: flex;\n    flex-direction: column;\n    width: 100%;\n\n    border: ", ";\n    border-radius: ", ";\n\n    background-color: ", ";\n    color: ", ";\n\n    font-size: ", ";\n    font-family: ", ";\n\n    z-index: ", ";\n\n    &:hover {\n      box-shadow: ", ";\n    }\n    &:active {\n      box-shadow: ", ";\n    }\n    &:focus-within {\n      box-shadow: ", ";\n    }\n  }\n"])), function (props) { return parseInt(props.theme.height) + 2 + 'px'; }, function (props) { return props.theme.border; }, function (props) { return props.theme.borderRadius; }, function (props) { return props.theme.backgroundColor; }, function (props) { return props.theme.color; }, function (props) { return props.theme.fontSize; }, function (props) { return props.theme.fontFamily; }, function (props) { return props.theme.zIndex; }, function (props) { return props.theme.boxShadow; }, function (props) { return props.theme.boxShadow; }, function (props) { return props.theme.boxShadow; });

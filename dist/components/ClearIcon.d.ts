@@ -1,8 +1,8 @@
 /// <reference types="react" />
-export declare const ClearIcon: ({ hasFocus, showClear, setSearchString, searchString, setFocus, onClear }: {
+export declare const ClearIcon: ({ hasFocus, showClear, resetSearchString, searchString, setFocus, onClear }: {
     hasFocus: boolean;
     showClear: boolean;
-    setSearchString: Function;
+    resetSearchString: Function;
     searchString: string;
     setFocus: Function;
     onClear: Function;

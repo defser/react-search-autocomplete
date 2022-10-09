@@ -3,20 +3,20 @@ import styled from 'styled-components'
 export const ClearIcon = ({
   hasFocus,
   showClear,
-  setSearchString,
+  resetSearchString,
   searchString,
   setFocus,
   onClear
 }: {
   hasFocus: boolean
   showClear: boolean
-  setSearchString: Function
+  resetSearchString: Function
   searchString: string
   setFocus: Function
   onClear: Function
 }) => {
   const handleClearSearchString = () => {
-    setSearchString({ target: { value: '' } })
+    resetSearchString()
     setFocus(false)
     onClear()
   }

@@ -167,6 +167,17 @@ export default function ReactSearchAutocomplete<T>({
     }
   }
 
+  const handleResetSearchString = () => {
+    const keyword = ''
+    setSearchString(keyword)
+    handleOnSearch(keyword)
+    setIsTyping(false)
+
+    if (isSearchComplete) {
+      setIsSearchComplete(false)
+    }
+  }
+
   const eraseResults = () => {
     setResults([])
     setIsSearchComplete(true)
@@ -223,6 +234,7 @@ export default function ReactSearchAutocomplete<T>({
           <SearchInput
             searchString={searchString}
             setSearchString={handleSetSearchString}
+            resetSearchString={handleResetSearchString}
             autoFocus={autoFocus}
             onFocus={handleOnFocus}
             onClear={onClear}
