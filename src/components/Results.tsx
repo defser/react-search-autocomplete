@@ -75,7 +75,6 @@ export default function Results<T>({
       {results.slice(0, maxResults).map((result, index) => (
         <li
           className={highlightedItem === index ? 'selected' : ''}
-          onMouseEnter={() => setHighlightedItem({ index })}
           data-test="result"
           key={`rsa-result-${index}`}
           onMouseDown={(event) => handleMouseDown({ event, result })}
