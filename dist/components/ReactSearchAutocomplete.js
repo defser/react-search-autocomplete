@@ -101,6 +101,7 @@ function ReactSearchAutocomplete(_a) {
     }, [isTyping, showNoResults, isSearchComplete, searchString, results]);
     (0, react_1.useEffect)(function () {
         if (showItemsOnFocus && results.length === 0 && searchString.length === 0 && hasFocus) {
+            setHighlightedItem(0);
             var array = __spreadArray([], items, true);
             array = array.sort(function (a, b) {
                 // @ts-ignore

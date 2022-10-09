@@ -106,6 +106,7 @@ export default function ReactSearchAutocomplete<T>({
 
   useEffect(() => {
     if (showItemsOnFocus && results.length === 0 && searchString.length === 0 && hasFocus) {
+      setHighlightedItem(0)
       let array = [...items]
       array = array.sort((a,b) => {
         // @ts-ignore
