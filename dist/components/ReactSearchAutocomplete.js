@@ -67,6 +67,7 @@ function ReactSearchAutocomplete(_a) {
     var _2 = (0, react_1.useState)(false), hasFocus = _2[0], setHasFocus = _2[1];
     (0, react_1.useEffect)(function () {
         setSearchString(inputSearchString);
+        // Search on init if inputSearchString is filled
         // const timeoutId = setTimeout(() => setResults(fuseResults(inputSearchString)), 0)
         //
         // return () => clearTimeout(timeoutId)
@@ -91,9 +92,11 @@ function ReactSearchAutocomplete(_a) {
     }, [isTyping, showNoResults, isSearchComplete, searchString, results]);
     (0, react_1.useEffect)(function () {
         if (showItemsOnFocus && results.length === 0 && searchString.length === 0 && hasFocus) {
-            setResults(items.slice(0, maxResults));
+            var shuffled = items.sort(function () { return .5 - Math.random(); });
+            setResults(shuffled.slice(0, maxResults));
         }
     }, [showItemsOnFocus, results, searchString, hasFocus]);
+    // remove hasfocus when clicked on dom
     // useEffect(() => {
     //   const handleDocumentClick = () => {
     //     setHasFocus(false)

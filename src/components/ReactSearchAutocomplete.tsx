@@ -77,6 +77,7 @@ export default function ReactSearchAutocomplete<T>({
 
   useEffect(() => {
     setSearchString(inputSearchString)
+    // Search on init if inputSearchString is filled
     // const timeoutId = setTimeout(() => setResults(fuseResults(inputSearchString)), 0)
     //
     // return () => clearTimeout(timeoutId)
@@ -105,10 +106,12 @@ export default function ReactSearchAutocomplete<T>({
 
   useEffect(() => {
     if (showItemsOnFocus && results.length === 0 && searchString.length === 0 && hasFocus) {
-      setResults(items.slice(0, maxResults))
+      let shuffled = items.sort(function(){return .5 - Math.random()});
+      setResults(shuffled.slice(0, maxResults))
     }
   }, [showItemsOnFocus, results, searchString, hasFocus])
 
+  // remove hasfocus when clicked on dom
   // useEffect(() => {
   //   const handleDocumentClick = () => {
   //     setHasFocus(false)
