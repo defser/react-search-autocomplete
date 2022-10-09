@@ -25,7 +25,7 @@ var ClearIcon = function (_a) {
     var hasFocus = _a.hasFocus, showClear = _a.showClear, setSearchString = _a.setSearchString, searchString = _a.searchString, setFocus = _a.setFocus, onClear = _a.onClear;
     var handleClearSearchString = function () {
         setSearchString({ target: { value: '' } });
-        setFocus();
+        setFocus(false);
         onClear();
     };
     if (!showClear) {

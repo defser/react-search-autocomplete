@@ -17,7 +17,7 @@ export const ClearIcon = ({
 }) => {
   const handleClearSearchString = () => {
     setSearchString({ target: { value: '' } })
-    setFocus()
+    setFocus(false)
     onClear()
   }
 
