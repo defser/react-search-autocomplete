@@ -92,7 +92,8 @@ function ReactSearchAutocomplete(_a) {
     }, [isTyping, showNoResults, isSearchComplete, searchString, results]);
     (0, react_1.useEffect)(function () {
         if (showItemsOnFocus && results.length === 0 && searchString.length === 0 && hasFocus) {
-            var shuffled = items.sort(function () { return .5 - Math.random(); });
+            var shuffled = items;
+            shuffled = shuffled.sort(function () { return .5 - Math.random(); });
             setResults(shuffled.slice(0, maxResults));
         }
     }, [showItemsOnFocus, results, searchString, hasFocus]);

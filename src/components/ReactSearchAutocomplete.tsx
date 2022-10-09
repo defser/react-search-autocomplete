@@ -106,7 +106,8 @@ export default function ReactSearchAutocomplete<T>({
 
   useEffect(() => {
     if (showItemsOnFocus && results.length === 0 && searchString.length === 0 && hasFocus) {
-      let shuffled = items.sort(function(){return .5 - Math.random()});
+      let shuffled = items
+      shuffled = shuffled.sort(function(){return .5 - Math.random()})
       setResults(shuffled.slice(0, maxResults))
     }
   }, [showItemsOnFocus, results, searchString, hasFocus])
