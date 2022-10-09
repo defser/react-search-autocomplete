@@ -37,6 +37,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -92,7 +101,7 @@ function ReactSearchAutocomplete(_a) {
     }, [isTyping, showNoResults, isSearchComplete, searchString, results]);
     (0, react_1.useEffect)(function () {
         if (showItemsOnFocus && results.length === 0 && searchString.length === 0 && hasFocus) {
-            var shuffled = items;
+            var shuffled = __spreadArray([], items, true);
             shuffled = shuffled.sort(function () { return .5 - Math.random(); });
             setResults(shuffled.slice(0, maxResults));
         }
