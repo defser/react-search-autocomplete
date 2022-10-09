@@ -51,6 +51,7 @@ export default function SearchInput({
         autoFocus={autoFocus}
         onKeyDown={(event) => setHighlightedItem({ event })}
         data-test="search-input"
+        type="search"
       />
       <ClearIcon
         hasFocus={hasFocus}
