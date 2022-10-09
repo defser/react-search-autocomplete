@@ -77,9 +77,9 @@ export default function ReactSearchAutocomplete<T>({
 
   useEffect(() => {
     setSearchString(inputSearchString)
-    const timeoutId = setTimeout(() => setResults(fuseResults(inputSearchString)), 0)
-
-    return () => clearTimeout(timeoutId)
+    // const timeoutId = setTimeout(() => setResults(fuseResults(inputSearchString)), 0)
+    //
+    // return () => clearTimeout(timeoutId)
   }, [inputSearchString])
 
   useEffect(() => {

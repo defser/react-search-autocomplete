@@ -67,8 +67,9 @@ function ReactSearchAutocomplete(_a) {
     var _2 = (0, react_1.useState)(false), hasFocus = _2[0], setHasFocus = _2[1];
     (0, react_1.useEffect)(function () {
         setSearchString(inputSearchString);
-        var timeoutId = setTimeout(function () { return setResults(fuseResults(inputSearchString)); }, 0);
-        return function () { return clearTimeout(timeoutId); };
+        // const timeoutId = setTimeout(() => setResults(fuseResults(inputSearchString)), 0)
+        //
+        // return () => clearTimeout(timeoutId)
     }, [inputSearchString]);
     (0, react_1.useEffect)(function () {
         (searchString === null || searchString === void 0 ? void 0 : searchString.length) > 0 &&
