@@ -140,6 +140,7 @@ export default function ReactSearchAutocomplete<T>({
 
   const handleOnFocus = (event: FocusEvent<HTMLInputElement>) => {
     onFocus(event)
+    setHighlightedItem(0)
     setHasFocus(true)
     searchString?.length > 0 && (setResults(fuseResults(searchString)))
   }

@@ -133,6 +133,7 @@ function ReactSearchAutocomplete(_a) {
     // }, [])
     var handleOnFocus = function (event) {
         onFocus(event);
+        setHighlightedItem(0);
         setHasFocus(true);
         (searchString === null || searchString === void 0 ? void 0 : searchString.length) > 0 && (setResults(fuseResults(searchString)));
     };
