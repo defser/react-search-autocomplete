@@ -5,19 +5,16 @@ export const ClearIcon = ({
   showClear,
   resetSearchString,
   searchString,
-  setFocus,
   onClear
 }: {
   hasFocus: boolean
   showClear: boolean
   resetSearchString: Function
   searchString: string
-  setFocus: Function
   onClear: Function
 }) => {
   const handleClearSearchString = () => {
     resetSearchString()
-    setFocus(false)
     onClear()
   }
 
