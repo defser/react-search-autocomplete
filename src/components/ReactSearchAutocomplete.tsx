@@ -168,14 +168,9 @@ export default function ReactSearchAutocomplete<T>({
   }
 
   const handleResetSearchString = () => {
-    const keyword = ''
-    setSearchString(keyword)
-    handleOnSearch(keyword)
+    setSearchString('')
     setIsTyping(false)
-
-    if (isSearchComplete) {
-      setIsSearchComplete(false)
-    }
+    eraseResults()
   }
 
   const eraseResults = () => {

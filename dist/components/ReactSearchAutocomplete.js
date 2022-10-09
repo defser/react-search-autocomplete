@@ -140,13 +140,9 @@ function ReactSearchAutocomplete(_a) {
         }
     };
     var handleResetSearchString = function () {
-        var keyword = '';
-        setSearchString(keyword);
-        handleOnSearch(keyword);
+        setSearchString('');
         setIsTyping(false);
-        if (isSearchComplete) {
-            setIsSearchComplete(false);
-        }
+        eraseResults();
     };
     var eraseResults = function () {
         setResults([]);
