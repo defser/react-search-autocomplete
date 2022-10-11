@@ -110,9 +110,9 @@ export default function ReactSearchAutocomplete<T>({
       let array = [...items]
       array = array.sort((a,b) => {
         // @ts-ignore
-        let timestampA = new Date(a.released).getTime()
+        let timestampA = new Date(a.releasedDate).getTime()
         // @ts-ignore
-        let timestampB = new Date(b.released).getTime()
+        let timestampB = new Date(b.releasedDate).getTime()
         let scoreA = 0
         let scoreB = 0
         if (timestampA && timestampB) {

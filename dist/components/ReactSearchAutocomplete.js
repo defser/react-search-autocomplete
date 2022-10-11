@@ -105,9 +105,9 @@ function ReactSearchAutocomplete(_a) {
             var array = __spreadArray([], items, true);
             array = array.sort(function (a, b) {
                 // @ts-ignore
-                var timestampA = new Date(a.released).getTime();
+                var timestampA = new Date(a.releasedDate).getTime();
                 // @ts-ignore
-                var timestampB = new Date(b.released).getTime();
+                var timestampB = new Date(b.releasedDate).getTime();
                 var scoreA = 0;
                 var scoreB = 0;
                 if (timestampA && timestampB) {
