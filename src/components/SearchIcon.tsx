@@ -31,6 +31,9 @@ export const SearchIcon = ({searchString, hasFocus, showIcon, handleSearch}: {
 }
 
 const StyledSearchIcon = styled.svg`
+  &:hover {
+    cursor: pointer;
+  }
   flex-shrink: 0;
   margin: ${(props) => props.theme.searchIconMargin};
   fill: ${(props) => props.theme.iconColor};
