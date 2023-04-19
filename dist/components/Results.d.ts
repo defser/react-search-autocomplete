@@ -1,5 +1,5 @@
 /// <reference types="react" />
-export declare type Item<T> = T & {
+export type Item<T> = T & {
     [key: string]: any;
 };
 export interface ResultsProps<T> {

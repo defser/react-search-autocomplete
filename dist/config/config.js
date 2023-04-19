@@ -12,6 +12,7 @@ var defaultTheme = {
     fontSize: '16px',
     fontFamily: 'Arial',
     iconColor: 'grey',
+    goColor: '#000',
     lineColor: 'rgb(232, 234, 237)',
     placeholderColor: 'grey',
     zIndex: 0,

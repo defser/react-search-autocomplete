@@ -1,6 +1,7 @@
 import { MouseEvent, ReactNode } from 'react'
 import styled from 'styled-components'
 import { SearchIcon } from './SearchIcon'
+import {GoIcon} from "./GoIcon";
 
 export type Item<T> = T & { [key: string]: any }
 

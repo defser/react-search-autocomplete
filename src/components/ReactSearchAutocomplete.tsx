@@ -25,6 +25,7 @@ export interface ReactSearchAutocompleteProps<T> {
   onSelect?: (result: T) => void
   onFocus?: FocusEventHandler<HTMLInputElement>
   onClear?: Function
+  handleGo?: Function
   showIcon?: boolean
   showClear?: boolean
   maxResults?: number
@@ -48,6 +49,7 @@ export default function ReactSearchAutocomplete<T>({
   onSelect = () => {},
   onFocus = () => {},
   onClear = () => {},
+  handleGo = () => {},
   showIcon = true,
   showClear = true,
   maxResults = MAX_RESULTS,
@@ -254,6 +256,7 @@ export default function ReactSearchAutocomplete<T>({
             autoFocus={autoFocus}
             onFocus={handleOnFocus}
             onClear={onClear}
+            handleGo={handleGo}
             placeholder={placeholder}
             showIcon={showIcon}
             showClear={showClear}

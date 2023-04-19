@@ -2,6 +2,7 @@ import { ChangeEventHandler, FocusEvent, FocusEventHandler, useRef } from 'react
 import styled from 'styled-components'
 import { ClearIcon } from './ClearIcon'
 import { SearchIcon } from './SearchIcon'
+import {GoIcon} from "./GoIcon";
 
 interface SearchInputProps {
   searchString: string
@@ -11,6 +12,7 @@ interface SearchInputProps {
   autoFocus: boolean
   onFocus: FocusEventHandler<HTMLInputElement>
   onClear: Function
+  handleGo: Function
   placeholder: string
   showIcon: boolean
   showClear: boolean
@@ -25,6 +27,7 @@ export default function SearchInput({
   autoFocus,
   onFocus,
   onClear,
+  handleGo,
   placeholder,
   hasFocus,
   showIcon = true,
@@ -52,6 +55,11 @@ export default function SearchInput({
         onKeyDown={(event) => setHighlightedItem({ event })}
         data-test="search-input"
         type="search"
+      />
+      <GoIcon
+        hasFocus={hasFocus}
+        searchString={searchString}
+        handleGo={handleGo}
       />
       <ClearIcon
         hasFocus={hasFocus}

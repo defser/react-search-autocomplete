@@ -11,6 +11,7 @@ export interface DefaultTheme {
   fontSize?: string
   fontFamily?: string
   iconColor?: string
+  goColor?: string
   lineColor?: string
   placeholderColor?: string
   zIndex?: number
@@ -29,6 +30,7 @@ const defaultTheme: DefaultTheme = {
   fontSize: '16px',
   fontFamily: 'Arial',
   iconColor: 'grey',
+  goColor: '#000',
   lineColor: 'rgb(232, 234, 237)',
   placeholderColor: 'grey',
   zIndex: 0,

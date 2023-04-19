@@ -10,6 +10,7 @@ export interface DefaultTheme {
     fontSize?: string;
     fontFamily?: string;
     iconColor?: string;
+    goColor?: string;
     lineColor?: string;
     placeholderColor?: string;
     zIndex?: number;
