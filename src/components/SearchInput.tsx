@@ -1,8 +1,7 @@
-import { ChangeEventHandler, FocusEvent, FocusEventHandler, useRef } from 'react'
+import {ChangeEventHandler, FocusEvent, FocusEventHandler, useRef} from 'react'
 import styled from 'styled-components'
-import { ClearIcon } from './ClearIcon'
-import { SearchIcon } from './SearchIcon'
-import {GoIcon} from "./GoIcon";
+import {ClearIcon} from './ClearIcon'
+import {SearchIcon} from './SearchIcon'
 
 interface SearchInputProps {
   searchString: string
@@ -12,7 +11,7 @@ interface SearchInputProps {
   autoFocus: boolean
   onFocus: FocusEventHandler<HTMLInputElement>
   onClear: Function
-  handleGo: Function
+  handleSearch: Function
   placeholder: string
   showIcon: boolean
   showClear: boolean
@@ -20,19 +19,19 @@ interface SearchInputProps {
 }
 
 export default function SearchInput({
-  searchString,
-  setSearchString,
-  resetSearchString,
-  setHighlightedItem,
-  autoFocus,
-  onFocus,
-  onClear,
-  handleGo,
-  placeholder,
-  hasFocus,
-  showIcon = true,
-  showClear = true
-}: SearchInputProps) {
+                                      searchString,
+                                      setSearchString,
+                                      resetSearchString,
+                                      setHighlightedItem,
+                                      autoFocus,
+                                      onFocus,
+                                      onClear,
+                                      handleSearch,
+                                      placeholder,
+                                      hasFocus,
+                                      showIcon = true,
+                                      showClear = true
+                                    }: SearchInputProps) {
   const ref = useRef<HTMLInputElement>(null)
 
   let manualFocus = true
@@ -43,7 +42,6 @@ export default function SearchInput({
 
   return (
     <StyledSearchInput>
-      <SearchIcon showIcon={showIcon} />
       <input
         ref={ref}
         spellCheck={false}
@@ -52,14 +50,15 @@ export default function SearchInput({
         onFocus={handleOnFocus}
         placeholder={placeholder}
         autoFocus={autoFocus}
-        onKeyDown={(event) => setHighlightedItem({ event })}
+        onKeyDown={(event) => setHighlightedItem({event})}
         data-test="search-input"
         type="search"
       />
-      <GoIcon
+      <SearchIcon
         hasFocus={hasFocus}
         searchString={searchString}
-        handleGo={handleGo}
+        handleSearch={handleSearch}
+        showIcon={showIcon}
       />
       <ClearIcon
         hasFocus={hasFocus}

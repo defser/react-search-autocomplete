@@ -1,7 +1,5 @@
 import { MouseEvent, ReactNode } from 'react'
 import styled from 'styled-components'
-import { SearchIcon } from './SearchIcon'
-import {GoIcon} from "./GoIcon";
 
 export type Item<T> = T & { [key: string]: any }
 
@@ -60,7 +58,6 @@ export default function Results<T>({
     return (
       <ResultsWrapper>
         <li data-test="no-results-message">
-          <SearchIcon showIcon={showIcon} />
           <div className="ellipsis">{showNoResultsText}</div>
         </li>
       </ResultsWrapper>
@@ -81,7 +78,6 @@ export default function Results<T>({
           onMouseDown={(event) => handleMouseDown({ event, result })}
           onClick={() => handleClick(result)}
         >
-          <SearchIcon showIcon={showIcon} />
           <div className="ellipsis" title={result[resultStringKeyName] as string}>
             {formatResultWithKey(result)}
           </div>

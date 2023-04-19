@@ -20,7 +20,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var jsx_runtime_1 = require("react/jsx-runtime");
 var styled_components_1 = __importDefault(require("styled-components"));
-var SearchIcon_1 = require("./SearchIcon");
 function Results(_a) {
     var _b = _a.results, results = _b === void 0 ? [] : _b, onClick = _a.onClick, setSearchString = _a.setSearchString, showIcon = _a.showIcon, maxResults = _a.maxResults, _c = _a.resultStringKeyName, resultStringKeyName = _c === void 0 ? 'name' : _c, highlightedItem = _a.highlightedItem, setHighlightedItem = _a.setHighlightedItem, formatResult = _a.formatResult, _d = _a.showNoResultsFlag, showNoResultsFlag = _d === void 0 ? true : _d, _e = _a.showNoResultsText, showNoResultsText = _e === void 0 ? 'No results' : _e;
     var formatResultWithKey = formatResult
@@ -38,12 +37,12 @@ function Results(_a) {
         }
     };
     if (showNoResultsFlag) {
-        return ((0, jsx_runtime_1.jsx)(ResultsWrapper, { children: (0, jsx_runtime_1.jsxs)("li", __assign({ "data-test": "no-results-message" }, { children: [(0, jsx_runtime_1.jsx)(SearchIcon_1.SearchIcon, { showIcon: showIcon }), (0, jsx_runtime_1.jsx)("div", __assign({ className: "ellipsis" }, { children: showNoResultsText }))] })) }));
+        return ((0, jsx_runtime_1.jsx)(ResultsWrapper, { children: (0, jsx_runtime_1.jsx)("li", __assign({ "data-test": "no-results-message" }, { children: (0, jsx_runtime_1.jsx)("div", __assign({ className: "ellipsis" }, { children: showNoResultsText })) })) }));
     }
     if ((results === null || results === void 0 ? void 0 : results.length) <= 0 && !showNoResultsFlag) {
         return null;
     }
-    return ((0, jsx_runtime_1.jsx)(ResultsWrapper, { children: results.slice(0, maxResults).map(function (result, index) { return ((0, jsx_runtime_1.jsxs)("li", __assign({ className: highlightedItem === index ? 'selected' : '', "data-test": "result", onMouseDown: function (event) { return handleMouseDown({ event: event, result: result }); }, onClick: function () { return handleClick(result); } }, { children: [(0, jsx_runtime_1.jsx)(SearchIcon_1.SearchIcon, { showIcon: showIcon }), (0, jsx_runtime_1.jsx)("div", __assign({ className: "ellipsis", title: result[resultStringKeyName] }, { children: formatResultWithKey(result) }))] }), "rsa-result-".concat(index))); }) }));
+    return ((0, jsx_runtime_1.jsx)(ResultsWrapper, { children: results.slice(0, maxResults).map(function (result, index) { return ((0, jsx_runtime_1.jsx)("li", __assign({ className: highlightedItem === index ? 'selected' : '', "data-test": "result", onMouseDown: function (event) { return handleMouseDown({ event: event, result: result }); }, onClick: function () { return handleClick(result); } }, { children: (0, jsx_runtime_1.jsx)("div", __assign({ className: "ellipsis", title: result[resultStringKeyName] }, { children: formatResultWithKey(result) })) }), "rsa-result-".concat(index))); }) }));
 }
 exports.default = Results;
 var ResultsWrapper = function (_a) {

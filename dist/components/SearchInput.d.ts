@@ -7,11 +7,11 @@ interface SearchInputProps {
     autoFocus: boolean;
     onFocus: FocusEventHandler<HTMLInputElement>;
     onClear: Function;
-    handleGo: Function;
+    handleSearch: Function;
     placeholder: string;
     showIcon: boolean;
     showClear: boolean;
     hasFocus: boolean;
 }
-export default function SearchInput({ searchString, setSearchString, resetSearchString, setHighlightedItem, autoFocus, onFocus, onClear, handleGo, placeholder, hasFocus, showIcon, showClear }: SearchInputProps): JSX.Element;
+export default function SearchInput({ searchString, setSearchString, resetSearchString, setHighlightedItem, autoFocus, onFocus, onClear, handleSearch, placeholder, hasFocus, showIcon, showClear }: SearchInputProps): JSX.Element;
 export {};
